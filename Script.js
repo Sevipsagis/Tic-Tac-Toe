@@ -1,5 +1,6 @@
 var resetButton = $("#resetButton");
 var thisTurn = "O";
+var winner = "none"
 var gameTurn = 0;
 var gameStatus = false;
 // Restart Game Function
@@ -53,9 +54,21 @@ $(document).ready(function () {
             a0 == b1 && b1 == c2 && a0 != "" ||
             a2 == b1 && b1 == c0 && a2 != "") {
             gameStatus = true;
-            alert(`It's over, The Winner is ${thisTurn}`);
-            alert("Press restart button to play again");
-            title.innerHTML = `It's over, The Winner is ${thisTurn}`;
+            winner = thisTurn;
+            title.innerHTML = `Winner is ${winner}`;
+            setTimeout(() => {
+                alert(`The Winner is ${winner}`);
+                alert("Press restart button to play again");
+            }, 0);
+        }
+        else {
+            if (gameTurn == 8) {
+                title.innerHTML = `Result is draw.`;
+                setTimeout(() => {
+                    alert(`It's over, Result is draw.`);
+                    alert("Press restart button to play again");
+                }, 0);
+            }
         }
     }
 });

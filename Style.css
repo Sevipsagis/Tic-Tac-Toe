@@ -1,13 +1,14 @@
 body{
     background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
 }
 #gameTitle, #resetButton, #gameArea{
     margin-top: 20px;
     margin-bottom: 20px;
 }
 #gameTitle{
-    color: #eb5e85;
-    font-weight: 400;
+    color: #FC5185;
+    font-weight: 500;
 }
 #resetButton{
     padding: 10px 25px 10px 25px;
@@ -26,7 +27,7 @@ tr.boxRow{
 td.gameBox{
     width: 33.33333%;
     text-align: center;
-    font-size: 4em;
+    font-size: 5.5em;
     border-width: 6px;
     border-color: #3b4e68;
 }
@@ -44,21 +45,37 @@ td.right{
 }
 
 .has-O{
-    color: #64bfc7;
+    color: #3FC1C9;
 }
 .has-X{
-    color: #eb5e85;
+    color: #FC5185;
 }
 .hover-O:after{
     content: "O";
+    color: #626060;
 }
 .hover-X:after{
     content: "X";
+    color: #626060;
 }
 
 @media (max-width: 991.98px) {
+    #gameTitle, #resetButton, #gameArea{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #gameTitle{
+        color: #FC5185;
+        font-weight: 300;
+        font-size: 3em;
+    }
     #gameArea{
         width: 45vh;
         height: 45vh;
     }
+    td.gameBox{
+        font-size: 4em;
+
+    }
+
 }
