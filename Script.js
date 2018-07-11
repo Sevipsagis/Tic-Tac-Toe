@@ -20,7 +20,14 @@ $(document).ready(function () {
         $(this).removeClass("hover-" + thisTurn);
     });
     gameBox.on("click", function () {
-        
+        if (true){
+            $(this).append(thisTurn);
+            $(this).addClass("has-" + thisTurn);
+            $(this).removeClass("hover-O hover-X");
+            // changeTurn
+            if(thisTurn == "O"){thisTurn = "X";}
+            else{thisTurn = "O";}
+        }
     });
 
 
