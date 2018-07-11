@@ -1,5 +1,6 @@
 var resetButton = $("#resetButton");
 var thisTurn = "O";
+var gameTurn = 0;
 var Winner = "none";
 var gameStatus = false;
 // Restart Game Function
@@ -27,8 +28,35 @@ $(document).ready(function () {
             // changeTurn
             if(thisTurn == "O"){thisTurn = "X";}
             else{thisTurn = "O";}
+            gameTurn++;
+            if(gameTurn >= 5){
+                WinConditionCheck();
+            } 
         }
     });
+
+    function WinConditionCheck(){
+        // Create Array
+        var arr = [];
+        for(let arg of gameBox){
+            // push arg into arr
+            arr.push(arg.innerHTML);
+        }
+        // assign value in arr to variable
+        var [a0, a1, a2, b0, b1, b2, c0, c1, c2] = arr;
+        // check condition
+        if(a0 == a1 && a1 == a2 && a0 != "" ||
+           b0 == b1 && b1 == b2 && b0 != "" ||
+           c0 == c1 && c1 == c2 && c0 != "" ||
+           a0 == b0 && b0 == c0 && a0 != "" ||
+           a1 == b1 && b1 == c1 && a1 != "" ||
+           a2 == b2 && b2 == c2 && a2 != "" ||
+           a0 == b1 && b1 == c2 && a0 != "" ||
+           a2 == b1 && b1 == c0 && a2 != "") {
+            alert(thisTurn);
+
+        }
+    }
 
 
 });
