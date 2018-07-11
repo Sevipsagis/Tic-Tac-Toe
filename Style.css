@@ -43,9 +43,17 @@ td.right{
     border-left-style: solid;
 }
 
-.hasO{
+.has-O, .has-X{
+    color: #64bfc7;
 }
-.hasX{
+
+.hover-O:after{
+    content: "O";
+    color: red;
+}
+.hover-X:after{
+    content: "X";
+    color: red;
 }
 
 @media (max-width: 991.98px) {
