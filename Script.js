@@ -1,7 +1,6 @@
 var resetButton = $("#resetButton");
 var thisTurn = "O";
 var gameTurn = 0;
-var Winner = "none";
 var gameStatus = false;
 // Restart Game Function
 function reloadPage() {
@@ -25,7 +24,7 @@ $(document).ready(function () {
             $(this).append(thisTurn);
             $(this).addClass("has-" + thisTurn);
             $(this).removeClass("hover-O hover-X");
-            if (gameTurn >= 5) {
+            if (gameTurn >= 4) {
                 WinConditionCheck();
             }
             // changeTurn
@@ -54,11 +53,9 @@ $(document).ready(function () {
             a0 == b1 && b1 == c2 && a0 != "" ||
             a2 == b1 && b1 == c0 && a2 != "") {
             gameStatus = true;
-            Winner = thisTurn;
-            alert(Winner);
-
+            alert(`It's over, The Winner is ${thisTurn}`);
+            alert("Press restart button to play again");
+            title.innerHTML = `It's over, The Winner is ${thisTurn}`;
         }
     }
-
-
 });
