@@ -1,0 +1,27 @@
+#gameTitle, #resetButton, #gameArea{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#gameArea{
+    width: 60vh;
+    height: 60vh;
+}
+table.gameTable{
+    width: 100%;
+    height: 100%;
+}
+tr.boxRow{
+    height: 33.33333%;
+}
+td.gameBox{
+    width: 33.33333%;
+    text-align: center;
+    background-color: red;
+}
+
+@media (max-width: 991.98px) {
+    #gameArea{
+        width: 45vh;
+        height: 45vh;
+    }
+}
