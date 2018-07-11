@@ -1,6 +1,6 @@
 var resetButton = $("#resetButton");
-var thisTurn = "O"
-var Winner = "--"
+var thisTurn = "O";
+var Winner = "none";
 var gameStatus = false;
 // Restart Game Function
 function reloadPage() {
@@ -20,7 +20,7 @@ $(document).ready(function () {
         $(this).removeClass("hover-" + thisTurn);
     });
     gameBox.on("click", function () {
-        if (true){
+        if (gameStatus == false && !($(this).hasClass("has-O")) && !($(this).hasClass("has-X"))){
             $(this).append(thisTurn);
             $(this).addClass("has-" + thisTurn);
             $(this).removeClass("hover-O hover-X");
