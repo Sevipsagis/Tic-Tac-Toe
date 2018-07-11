@@ -1,3 +1,9 @@
+var resetButton = $("#resetButton");
+function reloadPage(){
+    alert("Test");
+    location.reload();
+}
 $(document).ready(function(){
-    $(#A0).on("click", function(){alert("aa")});
+
+    
 });
